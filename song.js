@@ -58,4 +58,7 @@
   });
 
   audio.load();
+  console.log('FEXOZONE audio:', audio.currentSrc);
+console.log('Audio ready state:', audio.readyState);
+console.log('Audio error:', audio.error);
 })();
