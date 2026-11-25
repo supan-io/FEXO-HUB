@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b16">
+  <meta name="description" content="Partner with FEXOZONE. Explore gaming sponsorship and advertising opportunities.">
+  <title>Partnerships | FEXOZONE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">F</span><span>FEXO<span class="accent">ZONE</span><i>.</i></span></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+  <nav class="nav-links" id="navLinks"><a href="index.html">Home</a><a href="index.html#games">Games</a><a href="sponsorship.html" class="active">Sponsorship</a><a href="mailto:itzsupan@gmail.com">Contact</a></nav>
+  <a class="button button-small button-outline" href="mailto:itzsupan@gmail.com">Contact ↗</a>
+</header>
+<main>
+  <section class="section-wrap sponsor-hero">
+    <div><div class="eyebrow"><span class="live-dot"></span> BRAND PARTNERSHIPS</div>
+      <h1>GROW WITH<br><span class="gradient-text">FEXOZONE.</span></h1>
+      <p>Connect your brand with a gaming-focused community. Tell us about your company, your goals and the kind of partnership you're exploring. We'll review every inquiry personally.</p>
+      <a class="button button-primary" href="#inquiry">Send a sponsorship inquiry ↘</a>
+    </div>
+    <div class="sponsor-visual"><strong>PLAY.<br>CONNECT.<br>PARTNER.</strong></div>
+  </section>
+  <section class="section-wrap section-block" style="padding-top:25px">
+    <div class="section-heading"><div><div class="eyebrow">WAYS TO WORK TOGETHER</div><h2>Advertising <span class="gradient-text">packages.</span></h2></div><span class="section-index">01 / OPTIONS</span></div>
+    <p class="sponsor-intro">These are discussion options, not fixed-price offers. Final deliverables, availability, audience figures and pricing will be confirmed directly with FEXOZONE before any agreement.</p>
+    <div class="package-grid">
+      <article class="package-card"><span class="package-tag">01 / VISIBILITY</span><h3>Starter</h3><p>Explore a simple brand mention or logo placement in an agreed website location.</p></article>
+      <article class="package-card"><span class="package-tag">02 / FEATURED</span><h3>Premium</h3><p>Discuss a featured placement or campaign with agreed timing and creative assets.</p></article>
+      <article class="package-card"><span class="package-tag">03 / CUSTOM</span><h3>Exclusive</h3><p>Discuss a category-focused or limited-period partnership, subject to availability.</p></article>
+      <article class="package-card"><span class="package-tag">04 / FLEXIBLE</span><h3>Custom campaign</h3><p>Have a different idea? Propose your goals and we'll review a tailored collaboration.</p></article>
+    </div>
+  </section>
+  <section class="section-wrap section-block" id="inquiry">
+    <div class="section-heading"><div><div class="eyebrow">LET'S TALK BUSINESS</div><h2>Sponsorship <span class="gradient-text">inquiry.</span></h2></div><span class="section-index">02 / CONTACT FORM</span></div>
+    <div class="sponsor-layout">
+      <div class="panel"><h2>Tell us about your brand.</h2><p class="sponsor-intro">Fields marked * are required. Your request is sent to the FEXOZONE sponsorship inbox in our database for owner review.</p>
+        <form id="sponsorForm">
+          <div class="form-grid">
+            <div class="field"><label for="company">Company / brand name *</label><input id="company" name="company" maxlength="120" required autocomplete="organization"></div>
+            <div class="field"><label for="person">Contact person *</label><input id="person" name="person" maxlength="100" required autocomplete="name"></div>
+            <div class="field"><label for="email">Business email *</label><input id="email" name="email" type="email" maxlength="254" required autocomplete="email"></div>
+            <div class="field"><label for="website">Company website</label><input id="website" name="website" type="url" maxlength="300" placeholder="https://"></div>
+            <div class="field"><label for="country">Country / region</label><input id="country" name="country" maxlength="80"></div>
+            <div class="field"><label for="package">Partnership interest *</label><select id="package" name="package" required><option value="">Choose an option</option><option>Starter</option><option>Premium</option><option>Exclusive</option><option>Custom campaign</option><option>Not sure yet</option></select></div>
+            <div class="field full"><label for="budget">Indicative budget (optional)</label><select id="budget" name="budget"><option value="">Prefer not to say</option><option>To be discussed</option><option>Under USD 250</option><option>USD 250–999</option><option>USD 1,000–4,999</option><option>USD 5,000+</option></select></div>
+            <div class="field full"><label for="goals">Campaign goals *</label><input id="goals" name="goals" maxlength="250" required placeholder="e.g. brand awareness, product launch"></div>
+            <div class="field full"><label for="message">Tell us about your proposal *</label><textarea id="message" name="message" maxlength="3000" required placeholder="What would you like to achieve together?"></textarea><small>Maximum 3,000 characters. Please don't include passwords or sensitive personal information.</small></div>
+          </div>
+          <label class="hint"><input type="checkbox" id="consent" required> I agree that FEXOZONE may use these details to respond to this inquiry.</label>
+          <p class="form-message" id="sponsorMessage" role="status" aria-live="polite"></p>
+          <button class="button button-primary" id="submitSponsor" type="submit">Submit inquiry ↗</button>
+        </form>
+      </div>
+      <aside class="panel"><div class="eyebrow">ABOUT THE PROCESS</div><h2>What happens next?</h2>
+        <p class="sponsor-intro">1. Your inquiry is saved securely.<br>2. The FEXOZONE owner reviews the proposal.<br>3. If there's a fit, we'll contact you to discuss scope, timing and terms.</p>
+        <div class="contact-card"><div><b>Business & partnerships</b><p class="hint">Prefer email?</p><a href="mailto:itzsupan@gmail.com">itzsupan@gmail.com</a></div></div>
+        <p class="hint" style="margin-top:18px">Submitting a form is an inquiry only. It does not guarantee placement, acceptance, reach, or a sponsorship agreement.</p>
+      </aside>
+    </div>
+  </section>
+</main>
+<footer class="footer"><a class="brand" href="index.html"><span class="brand-mark">F</span><span>FEXO<span class="accent">ZONE</span><i>.</i></span></a><span>© <span id="year"></span> FEXOZONE</span><a href="mailto:itzsupan@gmail.com">itzsupan@gmail.com</a></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script><script src="sponsorship.js"></script>
+</body></html>
