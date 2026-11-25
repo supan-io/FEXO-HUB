@@ -78,7 +78,18 @@
 
   <footer class="footer"><a class="brand" href="#home"><span class="brand-mark">F</span><span>FEXO<span class="accent">ZONE</span><i>.</i></span></a><span>© <span id="year"></span> FEXOZONE. Built to play.</span><a href="sponsorship.html">SPONSORSHIP</a><a href="mailto:itzsupan@gmail.com">CONTACT</a><a href="#home">BACK TO TOP ↑</a></footer>
 
-  <div class="modal" id="loginModal" aria-hidden="true"><div class="modal-backdrop" id="modalBackdrop"></div><div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="loginClose" aria-label="Close">×</button><div class="eyebrow">PLAYER ACCESS</div><h2 id="modalTitle">Welcome to <span class="gradient-text">FEXOZONE.</span></h2><p class="modal-copy">Sign-in is a preview only. Real accounts will be added when a secure backend is connected.</p><label for="playerName">Player nickname</label><input id="playerName" type="text" maxlength="20" placeholder="e.g. NeonFox"><button class="button button-primary modal-submit" id="demoLogin">Preview profile ↗</button><p class="form-message" id="formMessage" aria-live="polite"></p></div></div>
+  <div class="modal" id="loginModal" aria-hidden="true"><div class="modal-backdrop" id="modalBackdrop"></div><div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="loginClose" aria-label="Close">×</button><div class="eyebrow">PLAYER ACCESS</div><h2 id="modalTitle">Welcome to <span class="gradient-text">FEXOZONE.</span></h2><p class="modal-copy" id="authDescription">Sign in with Google to access your player account on this device.</p><div id="signedOutActions"><button class="button button-primary modal-submit" id="googleLogin">Continue with Google ↗</button></div><div id="signedInActions" hidden><p id="playerIdentity" class="form-message"></p><button class="button button-outline modal-submit" id="signOutPlayer">Sign out</button></div><p class="form-message" id="formMessage" role="status" aria-live="polite"></p></div></div>
+  <link rel="stylesheet" href="song/song.css">
+  <div class="song-player" id="songPlayer" aria-label="FEXOZONE background music controls">
+    <button id="songToggle" type="button" disabled>♪ Music unavailable</button>
+    <label for="songVolume">Volume</label>
+    <input id="songVolume" type="range" min="0" max="100" value="35" aria-label="Music volume">
+    <span id="songVolumeValue">35%</span>
+    <audio id="backgroundSong" loop preload="none"><source src="song/SONG.mp3" type="audio/mpeg"></audio>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
   <script src="script.js"></script>
+  <script src="song/song.js"></script>
 </body>
 </html>

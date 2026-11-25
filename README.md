@@ -1,50 +1,38 @@
-# FEXOZONE — Sponsorship System Starter
+# FEXOZONE — Gaming Website Package
 
-## Included
-- `index.html` — rebranded gaming homepage
-- `sponsorship.html` — dedicated partnership page, package descriptions, inquiry form and contact information
-- `sponsorship-admin.html` — owner request-management screen
-- `sponsorship.js` — inquiry form submission
-- `sponsorship-admin.js` — Google sign-in and owner dashboard
-- `config.js` — public Supabase URL and anon/publishable key placeholders
-- `supabase-sponsorship.sql` — database tables and row-level security policies
-- `style.css`, `script.js` — site styling and homepage interactions
+Responsive dark-neon gaming website, rebranded as FEXOZONE. Built as a static site suitable for GitHub Pages, with Supabase-powered Google sign-in and sponsorship inquiry workflows after configuration.
 
-Public contact: itzsupan@gmail.com
+## Files
+- `index.html`, `style.css`, `script.js` — homepage, responsive styling and player Google sign-in.
+- `config.js` — public Supabase URL and anon/publishable key placeholders. Never put a service-role key here.
+- `sponsorship.html`, `sponsorship.js` — public partnership inquiry form.
+- `sponsorship-admin.html`, `sponsorship-admin.js` — owner-only sponsorship inbox.
+- `supabase-sponsorship.sql` — tables, RLS policies and restricted column grants.
+- `song/` — isolated homepage music player. Add a licensed/original `SONG.mp3`; none is included.
 
-## Important: setup is required before real submissions work
-This is a website code package, not a deployed/connected backend. The sponsorship form only stores inquiries after Supabase is configured.
+## Honest feature status
+- Homepage and sponsorship pages are included.
+- Google sign-in and sponsorship storage require your Supabase project and Google OAuth setup.
+- The sponsorship admin page manages sponsorship inquiries only; it is not yet a full game/user/analytics control center.
+- The leaderboard on the homepage is explicitly labeled DEMO and contains sample scores. It is not a live ranking.
+- Player accounts use Supabase Auth; advanced public player profiles and game-score submission are not connected yet.
+- The existing Neon Run 3D game is hosted separately at `https://supansarker2007.github.io/Neon-run-3d/`; its code is not included or modified by this package.
+- `song/SONG.mp3` is not supplied. Add only audio whose license permits website use.
 
-### 1. Create Supabase project
-1. Create a project at https://supabase.com/
-2. In Project Settings → API, copy the Project URL and anon/publishable key.
-3. Paste both into `config.js`.
-4. Never put a `service_role` key in browser code.
+## Setup
+1. Create a Supabase project. In Project Settings → API, copy Project URL and anon/publishable key into `config.js`. Do not use the service_role key.
+2. In Supabase SQL Editor, run all of `supabase-sponsorship.sql`.
+3. In Supabase Authentication → Providers, enable Google and configure the Google OAuth Client ID/Secret in the provider settings.
+4. In Supabase Authentication → URL Configuration, set Site URL to your GitHub Pages URL and add that exact URL as a Redirect URL.
+5. Open `sponsorship-admin.html`, sign in once with your Google account, then copy your UUID from Supabase → Authentication → Users. Run: `insert into public.owner_access (user_id) values ('YOUR-USER-UUID');`
+6. Upload the contents of this `FEXOZONE` folder to the root of your GitHub Pages repository. Keep file/folder names unchanged.
+7. To add music, place a properly licensed file named `SONG.mp3` inside `song/`. Browsers require a visitor interaction before audible playback.
 
-### 2. Create database
-1. Open Supabase → SQL Editor.
-2. Paste and run all of `supabase-sponsorship.sql`.
+## Publish with GitHub Pages
+Repository → Settings → Pages → Deploy from a branch → choose `main` and `/ (root)` → Save. Wait for GitHub Pages deployment.
 
-### 3. Configure Google sign-in
-1. In Supabase → Authentication → Sign In / Providers, enable Google.
-2. Configure Google OAuth credentials in Google Cloud Console.
-3. Add your deployed website URL to Supabase Authentication → URL Configuration → Redirect URLs.
-4. Use the same Google account that will own the website.
-
-### 4. Give your account owner access
-1. Sign in once at `sponsorship-admin.html` using your Google account.
-2. In Supabase → Authentication → Users, find that account and copy its UUID.
-3. In Supabase SQL Editor, run:
-   `insert into public.owner_access (user_id) values ('PASTE-YOUR-UUID-HERE');`
-4. Reload `sponsorship-admin.html`. Only users in `owner_access` can read or manage sponsorship requests.
-
-### 5. Publish
-Upload all files to the root of your GitHub repository. Enable GitHub Pages from Settings → Pages → Deploy from a branch → `main` → `/ (root)`.
-
-## Security notes
-- The public inquiry form can insert requests only with status `new` and no owner notes.
-- Public visitors cannot read requests.
-- Only manually authorized owner accounts can view and update requests.
-- Do not expose private OAuth client secrets or Supabase service-role keys in frontend files.
-- This package does not send email notifications. The admin dashboard is the owner inbox; email replies can be made using the contact's email link.
-- Supabase RLS is essential. Do not disable it.
+## Security
+- RLS is enabled for sponsorship requests. Public users can insert inquiries but cannot read them. Only UUIDs manually added to `owner_access` can read/update requests.
+- Browser code contains only the Supabase anon/publishable key. Never publish service-role keys, OAuth client secrets, passwords or private owner credentials.
+- The SQL grants only the fields needed for public inquiry insertion and owner status/notes updates.
+- This is a static GitHub Pages deployment; do not store private secrets in frontend files.

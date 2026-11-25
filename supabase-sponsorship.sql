@@ -54,3 +54,13 @@ with check (exists (select 1 from public.owner_access oa where oa.user_id = auth
 -- Supabase → Authentication → Users, then run this with your actual UUID:
 -- insert into public.owner_access (user_id) values ('YOUR-AUTH-USER-UUID');
 -- Do not put your UUID or service_role key in public website files.
+
+
+-- Restrict browser privileges to the exact fields each workflow needs.
+revoke all on table public.owner_access from anon, authenticated;
+grant select on table public.owner_access to authenticated;
+revoke all on table public.sponsorship_requests from anon, authenticated;
+grant insert (company_name, contact_person, business_email, website, country_region, package_interest, indicative_budget, campaign_goals, proposal)
+  on table public.sponsorship_requests to anon, authenticated;
+grant select on table public.sponsorship_requests to authenticated;
+grant update (status, owner_notes, updated_at) on table public.sponsorship_requests to authenticated;
