@@ -1,0 +1,7 @@
+SONG.mp3 is intentionally not included because no original/licensed audio file has been generated or supplied yet.
+
+Add your own original track or an audio file whose license explicitly permits use on a public/commercial website. Rename it exactly SONG.mp3 and place it in this folder.
+
+Browsers block audible autoplay before user interaction. Visitors must press Play Music. Volume is stored locally on each visitor's own device.
+
+AI music prompt: Create an original instrumental background theme for a futuristic gaming website: atmospheric electronic music, smooth synth pads, gentle melodic plucks, subtle futuristic textures, soft electronic percussion, no vocals, no lyrics, no samples, no sound-alike artist references, seamless 2-3 minute loop. Confirm the generator's license allows public website use before publishing.
